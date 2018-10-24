@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="plone">
+
+    <subscriber
+        for="plone.app.contenttypes.interfaces.IImage
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler=".subscribers.add_image_attributes"
+        />
+
+    <subscriber
+        for="plone.app.contenttypes.interfaces.IImage
+             zope.lifecycleevent.interfaces.IObjectRemovedEvent"
+        handler=".subscribers.remove_image_attributes"
+        />
+
+    <subscriber
+        for="plone.app.contenttypes.interfaces.IImage
+             zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+        handler=".subscribers.update_image_attributes"
+        />
+
+</configure>

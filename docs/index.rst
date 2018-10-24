@@ -1,0 +1,5 @@
+=========================
+collective.imageextension
+=========================
+
+User documentation
