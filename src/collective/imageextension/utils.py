@@ -34,5 +34,7 @@ def get_ratio(image):
     w, h = image.size
     if w == -1 and h == -1:
         return None
-    value = '{}'.format((float(h) / float(w)) * 100)
-    return value
+    value = (float(h) / float(w)) * 100
+    if value > 100:
+        value = 100
+    return '{}'.format(value)
